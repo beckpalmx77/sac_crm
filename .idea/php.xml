@@ -80,4 +80,9 @@
       <path value="$PROJECT_DIR$/vendor/tcpdf/config" />
     </include_path>
   </component>
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="localhost" id="d9dd5ee8-f156-40cd-a849-456001eeafc6" name="localhost" port="8888" use_path_mappings="true" />
+    </servers>
+  </component>
 </project>

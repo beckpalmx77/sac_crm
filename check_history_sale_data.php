@@ -96,8 +96,12 @@ $YearRecords = $stmt_year->fetchAll();
                                                                 </select>
 
                                                                 <br>
-                                                                <div><input type="hidden" id="customerName" name="customerName" value="<?php echo $customerName; ?>"></div>
-                                                                <div><input type="hidden" id="customerId" name="customerId" value="<?php echo $customerId; ?>"></div>
+                                                                <div><input type="hidden" id="customerName"
+                                                                            name="customerName"
+                                                                            value="<?php echo $customerName; ?>"></div>
+                                                                <div><input type="hidden" id="customerId"
+                                                                            name="customerId"
+                                                                            value="<?php echo $customerId; ?>"></div>
                                                                 <div class="row">
                                                                     <div class="col-sm-12">
                                                                         <button type="button" id="BtnSale1"
@@ -169,7 +173,7 @@ $YearRecords = $stmt_year->fetchAll();
 <script src="js/MyFrameWork/framework_util.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#BtnSale1").click(function () {
             if ($("#year").val() !== '-') {
                 document.forms['myform'].action = 'show_data_sale_tires';

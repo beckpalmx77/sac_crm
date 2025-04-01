@@ -144,7 +144,7 @@ foreach ($MonthCurr as $row_curr) {
                 data: {
                     year: year,
                     month: month,
-                    customerId:customerId,
+                    customerId: customerId,
                     //shop_type:shop_type,
                 },
                 dataType: 'json',

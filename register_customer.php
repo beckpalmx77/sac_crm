@@ -7,7 +7,7 @@ include('config/connect_db.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/favicon.ico">
-    <title>สมัครสมาชิก SAC Customer Relation</title>
+    <title>SAC Customer Relation</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,8 @@ include('config/connect_db.php');
         <div class="d-flex justify-content-center mb-4">
             <img src="img/logo/sac_crm_logo.png" style="height: 70px; width: auto; max-width: 100%;" />
         </div>
-        <h4 class="mb-4">สมัครสมาชิก SAC Customer Relation</h4>
+        <h4 class="mb-4">สมัครสมาชิก</h4>
+        <h5 class="mb-4">SAC Customer Relation</h5>
 
         <form id="registerForm">
             <div class="mb-4 text-center">
@@ -93,8 +94,12 @@ include('config/connect_db.php');
                 liff.getProfile().then(profile => {
                     document.getElementById("lineUserId").value = profile.userId;
                     document.getElementById("name").value = profile.displayName;
-                    document.getElementById("profilePic").src = profile.pictureUrl;
-                    document.getElementById("picture").value = profile.pictureUrl;
+
+                    // ถ้าไม่มี profile picture ให้ใช้ default image
+                    let profilePic = profile.pictureUrl ? profile.pictureUrl : "img/icon/user-001.png";
+                    document.getElementById("profilePic").src = profilePic;
+                    document.getElementById("picture").value = profilePic;
+
                     document.getElementById("statusMessage").value = profile.statusMessage || "ไม่มีข้อความสถานะ";
                 });
             } else {

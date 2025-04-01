@@ -33,7 +33,7 @@ $liffId = "2007157323-wOpQ3vN6";
         <div class="d-flex justify-content-center mb-4">
             <img src="img/logo/sac_crm_logo.png" style="height: 70px; width: auto; max-width: 100%;" />
         </div>
-        <h4 class="mb-4">รายการสะสมคะแนน</h4>
+        <h4 class="mb-4">รายการประวัติการสั่งซื้อสินค้า</h4>
         <form id="registerForm">
             <div class="mb-4 text-center">
                 <img id="profilePic" src="img/icon/user-001.png" class="rounded-circle" width="100" alt="รูปโปรไฟล์">
@@ -93,7 +93,10 @@ $liffId = "2007157323-wOpQ3vN6";
                     if (response.status === "found") {
                         // ส่ง customer_id ไปกับ report2.php
                         let customerId = response.customerId; // สมมติว่า customer_id ถูกส่งกลับมาใน response
-                        window.location.href = "report2?customer_id=" + customerId;
+                        let customerName = response.customerName; // สมมติว่า customer_id ถูกส่งกลับมาใน response
+                        //window.location.href = "checkpoint_data?customer_id=" + customerId;
+                        window.location.href = "check_history_sale_data?customer_id=" + encodeURIComponent(customerId) +
+                            "&customer_name=" + encodeURIComponent(customerName);
                     } else {
                         alertify.error("⚠️ คุณยังไม่ได้ลงทะเบียน กรุณาติดต่อเจ้าหน้าที่");
                         setTimeout(closeWindow, 3000);
@@ -107,7 +110,6 @@ $liffId = "2007157323-wOpQ3vN6";
                 }
             });
         }
-
 
         function hideLoading() {
             $("#loadingSpinner").fadeOut(300, function() {

@@ -104,7 +104,7 @@ foreach ($MonthCurr as $row_curr) {
 </div>
 
 <div class="container-fluid mt-5">
-    <h3>สรุปคะแนนลูกค้า ตาม Size ยาง เดือน <?php echo $month_name . " ปี " . $year ?></h3>
+    <h3>สรุปประวิตการซื้อสินค้า</ป> เดือน <?php echo $month_name . " ปี " . $year ?></h3>
     <h3><?php echo $customerName ?></h3>
     <div class="table-responsive">
         <table class="table table-striped" id="salesTable">

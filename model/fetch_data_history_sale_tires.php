@@ -50,7 +50,7 @@ WHERE
     AND a.SKU_CODE NOT LIKE 'CL%'
     AND p.TIRES_EDGE LIKE 'R%'    
     AND a.DI_MONTH LIKE '%" . $month . "%' 
-    AND a.DI_YEAR LIKE '%" . $year . "%'" . $where_ar_code . " ORDER BY a.AR_CODE, a.DI_DATE , a.SKU_CODE, p.TIRES_EDGE; ";
+    AND a.DI_YEAR LIKE '%" . $year . "%'" . $where_ar_code . " ORDER BY STR_TO_DATE(a.DI_DATE, '%d-%m-%Y') ; ";
 
 /*
 $myfile = fopen("a-param1.txt", "w") or die("Unable to open file!");

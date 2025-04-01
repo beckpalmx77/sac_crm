@@ -3,6 +3,7 @@ include('includes/Header.php');
 include("config/connect_db.php");
 
 $month_num = str_replace('0', '', date('m'));
+$year_num = date('Y');
 $customerId = "";
 $customerId = "";
 
@@ -82,8 +83,8 @@ $YearRecords = $stmt_year->fetchAll();
                                                                 <label for="year">เลือกปี :</label>
                                                                 <select name="year" id="year" class="form-control"
                                                                         required>
-                                                                    <option value="-"
-                                                                            selected>-
+                                                                    <option value="<?php echo $year_num ?>"
+                                                                            selected><?php echo $year_num ?>
                                                                     </option>
                                                                     <?php foreach ($YearRecords as $row) { ?>
                                                                         <option value="<?php echo $row["DI_YEAR"]; ?>">

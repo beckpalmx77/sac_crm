@@ -86,11 +86,11 @@ $YearRecords = $stmt_year->fetchAll();
                                                                     <option value="<?php echo $year_num ?>"
                                                                             selected><?php echo $year_num ?>
                                                                     </option>
-                                                                    <?php foreach ($YearRecords as $row) { ?>
+                                                                    <?php /* foreach ($YearRecords as $row) { ?>
                                                                         <option value="<?php echo $row["DI_YEAR"]; ?>">
                                                                             <?php echo $row["DI_YEAR"]; ?>
                                                                         </option>
-                                                                    <?php } ?>
+                                                                    <?php } */ ?>
                                                                 </select>
 
                                                                 <br>
